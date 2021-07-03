@@ -14,10 +14,10 @@ const Search = require('../models/search');
 
 
 
-describe('/GET/:id flight', () => {
+describe('/GET/:id train', () => {
     it('it should GET a flight by the given id', (done) => {
         chai.request(server.app)
-          .get('/flight/search?source=pune&destination=nanded')
+          .get('/train/search?source=mumbai&destination=thrissur')
           .end((err, res) => {
             expect(res).to.have.status(200);
             res.body.should.be.a('array');
@@ -29,7 +29,7 @@ describe('/GET/:id flight', () => {
 
     it('it should not GET a flight by the given id', (done) => {
         chai.request(server.app)
-          .get('/flight/search?source=pune&destination=')
+          .get('/train/search?source=pune&destination=')
           .end((err, res) => {
             expect(res).to.have.status(400);
             res.body.should.be.a('object');
