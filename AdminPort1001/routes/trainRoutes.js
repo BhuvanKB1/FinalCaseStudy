@@ -113,7 +113,7 @@ router.get('/train' ,trainsController.trains_get);
 
 
 
-router.get('/train/:id',isAuthenticated,trainsController.trains_getbyId);
+router.get('/train/:id',trainsController.trains_getbyId);
 
 
 
